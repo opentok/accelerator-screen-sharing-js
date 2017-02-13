@@ -1,4 +1,4 @@
-![logo](../tokbox-logo.png)
+![logo](tokbox-logo.png)
 
 # Accelerator Screensharing for Javascript<br/>Version 1.0.+
 
