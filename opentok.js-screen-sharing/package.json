@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/opentok/screen-sharing-acc-pack/tree/master/js"
+    "url": "https://github.com/opentok/accelerator-screen-sharing-js"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
