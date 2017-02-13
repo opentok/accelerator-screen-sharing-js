@@ -1,4 +1,4 @@
-# Accelerator TextChat js CHANGELOG
+# Accelerator Screensharing js CHANGELOG
 All notable changes to this project will be documented in this file.
 
 --------------------------------------
