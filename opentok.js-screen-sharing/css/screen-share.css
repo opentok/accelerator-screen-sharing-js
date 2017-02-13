@@ -1,0 +1,108 @@
+/* Screensharing styles */
+
+.video-control.share-screen {
+  margin-left: 10px;
+  background-image: url("../images/icon/screen-share.png");
+}
+
+.video-control.share-screen.disabled,
+.video-control.share-screen:hover {
+  background-image: url("../images/icon/screen-share.png");
+}
+.video-control.share-screen.active {
+  background-color: red;
+  background-image: url("../images/icon/screen-share.png");
+}
+
+.wms-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.wms-modal .wms-modal-body {
+  position: relative;
+  width: 456px;
+  height: 286px;
+  margin: 100px auto 0;
+  padding: 62px 70px;
+  background: #ffffff;
+  border: 1px solid #c7c7c7;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35);
+  color: #282828;
+}
+.wms-modal .wms-modal-body .wms-modal-title span {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.wms-modal .wms-modal-body .wms-modal-title.with-icon {
+  position: relative;
+  padding-left: 70px;
+}
+.wms-modal .wms-modal-body .wms-modal-title.with-icon i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 60px;
+  height: 41px;
+  margin-top: -23px;
+  max-width: 60px;
+  max-height: 42px;
+}
+.wms-modal .wms-modal-body p {
+  font-size: 14px;
+  margin: 20px 0;
+}
+.wms-modal .wms-modal-body .wms-btn-install {
+  display: block;
+  width: 316px;
+  height: 44px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 44px;
+  color: #fff;
+  font-size: 14px;
+  background: #259de8;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.wms-modal .wms-modal-body .wms-cancel-btn-install {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/icon/oval-281-x.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .wms-modal .wms-modal-body .wms-cancel-btn-install {
+    background-image: url("../images/icon/oval-281-x@2x.png");
+    background-size: 25px 25px;
+  }
+}
+
+.wms-icon-share-large {
+  background-image: url("../images/icon/screenshare-large.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .wms-icon-share-large {
+    background-image: url("../images/icon/screenshare-large@2x.png");
+    background-size: 60px 41px;
+  }
+}
