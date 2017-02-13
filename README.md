@@ -24,7 +24,7 @@ Otherwise, include the accelerator pack in your html:
 ```html
 <script src="../your/path/to/opentok-screen-sharing.js"></script>
 ```
- . . . and it will be available in global scope as `TextChatAccPack`
+ . . . and it will be available in global scope as `ScreenSharingAccPack`
 
 -----------------
 
