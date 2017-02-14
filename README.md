@@ -1,6 +1,14 @@
 ![logo](tokbox-logo.png)
 
-# Accelerator Screensharing for Javascript<br/>Version 1.0.+
+[![Build Status](https://travis-ci.org/opentok/accelerator-screen-sharing-js.svg?branch=master)](https://travis-ci.org/opentok/accelerator-screen-sharing-js)
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](./README.md)
+[![license MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](./.github/LICENSE)
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/opentok-screen-sharing)
+
+
+-------
+
+# Accelerator Screensharing for Javascript<br/>
 
 ## Quick start
 
