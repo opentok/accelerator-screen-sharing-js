@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 --------------------------------------
 
+####[1.0.25]
+
+[UPDATED] Internal client logging.
 
 ####[1.0.24]
 
