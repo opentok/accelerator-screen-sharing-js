@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ScreenSharing AccPack Tests</title>
+    <link rel="stylesheet" href="../node_modules/grunt-blanket-mocha/node_modules/mocha/mocha.css">
+    <script src="https://static.opentok.com/v2/js/opentok.min.js" type="text/javascript" defer></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" defer></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/grunt-blanket-mocha/node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/grunt-blanket-mocha/node_modules/blanket/dist/mocha/blanket_mocha.js"></script>
+    <script src="../node_modules/grunt-blanket-mocha/support/mocha-blanket.js"></script>
+    <script src="../node_modules/opentok-solutions-logging/src/opentok-solutions-logging.js"></script>
+</head>
+<body>
+  <div id="mocha">
+    <script>mocha.setup('bdd')</script>
+    <script src="../src/opentok-screen-sharing.js" data-cover></script>
+    <script src="../test/components/accelerator-pack.js" data-cover></script>
+    <script src="../test/opentok-screen-sharing-test.js"></script>
+    <script>
+    if (window.PHANTOMJS) {
+        blanket.options("reporter", "../node_modules/grunt-blanket-mocha/support/grunt-reporter.js");
+    }
+    else {
+        mocha.run();
+    }
+    </script>
+  </div>
+</body>
+</html>

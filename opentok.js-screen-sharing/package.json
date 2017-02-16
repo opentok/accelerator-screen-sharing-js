@@ -1,0 +1,47 @@
+{
+  "name": "opentok-screen-sharing",
+  "version": "1.0.25",
+  "description": "OpenTok screen sharing accelerator pack",
+  "main": "dist/opentok-screen-sharing.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "stage": "1"
+  },
+  "keywords": [
+    "opentok",
+    "annotation",
+    "opentok-acc-pack",
+    "screen-sharing",
+    "audio/video"
+  ],
+  "author": "adrice727@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opentok/accelerator-screen-sharing-js"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-amd-optimizer": "^0.3.4",
+    "gulp-amdclean": "^1.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-docco": "0.0.4",
+    "gulp-if": "^2.0.0",
+    "gulp-import-css": "^0.1.2",
+    "gulp-inline-css": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-zip": "^3.2.0",
+    "merge-stream": "^1.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "opentok-solutions-logging": "^1.0.6",
+    "underscore": "^1.8.3"
+  }
+}
