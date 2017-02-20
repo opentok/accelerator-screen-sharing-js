@@ -13,8 +13,7 @@
 
 ## Quick start
 
-The OpenTok Screensharing Accelerator Pack provides functionality you can add to your OpenTok applications that enables users to share the screen.
-This section shows you how to use the accelerator pack.
+The OpenTok Screensharing Accelerator Pack provides functionality you can add to your OpenTok applications that enables users to share the screen. This section shows you how to use the accelerator pack.
 
 ## Install
 
@@ -46,6 +45,7 @@ This class sets up the screen share UI views and events, and provides functions 
 #### Initialization
 
 The following `options` fields are used in the `ScreenShareAccPack` constructor:<br/>
+
  Feature        | Field  | Required
  ------------- | ------------- | ------------
 Set the OpenTok session  (object).| `session` |`true`
@@ -75,6 +75,7 @@ Once you define the options, you simply create a new instance of the  `ScreenSha
 #### ScreenShareAccPack Methods
 
 The `ScreenShareAccPack` component has the following methods:
+
 | Method        | Description  |
 | ------------- | ------------- |
 | `extensionAvailable()` |  Test whether an extension is available.  |
@@ -84,6 +85,7 @@ The `ScreenShareAccPack` component has the following methods:
 #### Events
 
 The `ScreenSharingAccPack` component emits the following events:
+
  Event        | Description
  ------------- | -------------
  `startScreenSharing ` | We've started publishing/sharing the screen.

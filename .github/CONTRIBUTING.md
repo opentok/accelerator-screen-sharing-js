@@ -11,7 +11,7 @@ that we would be interested in hearing about.
 *  New Features
     -  If you'd like to accomplish something in the library that it doesn't already do, describe the problem in a new
        Github issue.
-    -  Issues that have been identified as a feature request will be labelled `enhancement`.
+    -  Issues that have been identified as a feature request will be labeled `enhancement`.
     -  If you'd like to implement the new feature, please wait for feedback from the project maintainers before spending
        too much time writing the code. In some cases, `enhancement`s may not align well with the project objectives at
        the time.
