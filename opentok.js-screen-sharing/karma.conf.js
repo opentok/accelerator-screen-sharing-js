@@ -1,5 +1,14 @@
 module.exports = function(config) {
-    config.set({
+  var customLaunchers = {
+      sl_chrome: {
+        base: 'SauceLabs',
+        browserName: 'chrome',
+        platform: 'OS X 10.11',
+        version: '56'
+      }
+  };
+
+  var configuration = {
         basePath: '',
         frameworks: ['mocha'],
         files: [
@@ -13,7 +22,7 @@ module.exports = function(config) {
             'test/*.html': ['html2js'],
             'src/*.js': ['coverage']
         },
-        reporters: ['progress', 'coverage'],
+        reporters: ['progress', 'coverage', 'dots', 'saucelabs'],
         port: 9877,
         colors: true,
         autoWatch: true,
@@ -30,6 +39,14 @@ module.exports = function(config) {
                 { type: 'lcov', subdir: 'report-lcov' },
                 { type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt' }
             ]
-        }
-    });
+        },
+      sauceLabs: {
+        testName: 'Accelerator Screen Sharing Unit Tests',
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY
+    },
+    customLaunchers: customLaunchers,
+    browsers: Object.keys(customLaunchers),
+  };
+  config.set(configuration);
 };
