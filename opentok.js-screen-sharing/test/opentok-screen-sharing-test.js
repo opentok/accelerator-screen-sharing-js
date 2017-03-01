@@ -30,9 +30,9 @@ describe('Screen Sharing Acc Pack', function() {
    before(function() {
 
        _optionsap = {
-           apiKey: '123', // Replace with an OpenTok API key
-           sessionId: '1234', // Replace with a generated Session ID
-           token: '12345'
+           apiKey: 'yourAPIKey', // Replace with an OpenTok API key
+           sessionId: 'yourSessionID', // Replace with a generated Session ID
+           token: 'yourToken'
       };
 
        _accPack = new AcceleratorPack(_optionsap);
@@ -42,10 +42,10 @@ describe('Screen Sharing Acc Pack', function() {
        };
 
        _session = {
-         id: '123', // Replace with a generated Session ID
+         id: 'yourSessionID', // Replace with a generated Session ID
          connection: _connection,
-         apiKey: '1234', // Replace with an OpenTok API key
-         token: '12345'
+         apiKey: 'yourAPIKey', // Replace with an OpenTok API key
+         token: 'yourToken'
       };
 
        _options = {
