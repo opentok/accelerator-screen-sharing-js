@@ -98,4 +98,4 @@ If using the screen sharing accelerator pack with [Accelerator Core](https://git
 otCore.on('eventName', callback)
 ```
 
-### One to one sample app using the Accelerator Screensharing with best-practices for Javascript (https://github.com/opentok/one-to-one-screen-annotations-sample-apps).
+### Multiparty video communication sample app using the Accelerator Screensharing with best-practices for Javascript (https://github.com/opentok/accelerator-sample-apps-js).
