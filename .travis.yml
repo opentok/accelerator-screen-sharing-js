@@ -6,7 +6,6 @@ before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 before_script:
-- cd opentok.js-screen-sharing
 - npm install
 - npm install --save-dev chai grunt karma karma-chai grunt-karma karma-chrome-launcher karma-coverage karma-firefox-launcher karma-html2js-preprocessor mocha karma-mocha karma-phantomjs-launcher load-grunt-tasks karma-browserify babel-plugin-espower
 script:
