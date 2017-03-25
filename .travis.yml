@@ -3,15 +3,12 @@ node_js:
 - '4.4'
 env:
 - SAUCE_USERNAME=verticalsol
-before_install: 
+before_install:
 before_script:
 - npm install
-- npm install --save-dev chai grunt karma karma-chai grunt-karma karma-chrome-launcher
-  karma-coverage karma-firefox-launcher karma-html2js-preprocessor mocha karma-mocha
-  karma-phantomjs-launcher load-grunt-tasks karma-browserify babel-plugin-espower
-  babelify karma-sauce-launcher
+- npm install --save-dev chai karma karma-chai karma-chrome-launcher karma-coverage karma-firefox-launcher karma-html2js-preprocessor mocha karma-mocha karma-phantomjs-launcher karma-browserify babel-plugin-espower karma-sauce-launcher
 script:
-- grunt karma:prod
+- npm test
 notifications:
   slack:
     secure: uyXK9zqfENTTYdP5ghoi3mRVv5aWxp6yj80MRP0qMTubtnOSvye0kCyY7Y/u8Ww+wE+9Xw2ZD6qLt0JEbO6HUAOOaXd6JsduxTwS4m1L/4qzPvBQztDAJRNvQx3nbh38uP0fuzZc1GRfTPNmDYUvczPRcWTduPZO82Kgzb4vafkss4thfKbnZqwLud/pghaJuN/LeESO2vmf0HxUlxTpnw4BYBUAnPo/9YUao7bvg2/3kxIpxApKZyxnoHeBcoNOOzzCmVBQnkfc4LMbXXg7ixwe0789gzOmr7ifeSBN6FVwNrw0rUNGQHA5tKnOclsfvHwdGHPoOLadZqbMi1QYXT+t89WpveBsbhBu3xqzZzHr7+LoBaP5Heg+FIeCyNqk7H1z24/7HtEDwc1dwIuGkphWYdHazSCNcjet1mVsVouM7Yg5SuUNN+pnAo74A5b2iR/PS7RoU09xAclAThwVV/txkz42nOvXka8DHKXEn8Kie8xplWt2T8aDq2jfHpI9I27/mxZl8GxqjPCbMCl9I1BE8FnnQP6FoFhj7EQ8+CYbxCA45XOYV0guv8D34/lTXmh2QozAxD3R/BOqaOn6V2aIb2szDb4KeM5t60qCGS6tuW7/hTt4xTcrrnfrfNDntXO2RkHnxONpuEGk0O1dLzL0Hdf8irq3vqUwE+Sk7GE=
