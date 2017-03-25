@@ -5,7 +5,6 @@ env:
 - SAUCE_USERNAME=verticalsol
 before_install: 
 before_script:
-- cd opentok.js-screen-sharing
 - npm install
 - npm install --save-dev chai grunt karma karma-chai grunt-karma karma-chrome-launcher
   karma-coverage karma-firefox-launcher karma-html2js-preprocessor mocha karma-mocha
