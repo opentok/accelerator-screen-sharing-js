@@ -7,11 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "build-css": "npm-css css/screen-share.css -o dist/screen-share.css",
+ 	"build-css": "npm-css css/screen-share.css -o dist/screen-share.css",
     "build-js": "cp src/opentok-screen-sharing.js dist/ & uglifyjs src/opentok-screen-sharing.js -o dist/opentok-screen-sharing.min.js",
     "build-images": "cp -r images/ dist/images/",
     "build": "mkdir -p dist && npm run build-js & npm run build-css & npm run build-images",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "babel": {
     "stage": "1"
