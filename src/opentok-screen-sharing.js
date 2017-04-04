@@ -75,7 +75,7 @@
 
   // vars for the analytics logs. Internal use
   var _logEventData = {
-    clientVersion: 'js-vsol-1.0.25',
+    clientVersion: 'js-vsol-x.y.z', // x.y.z filled by npm build script
     componentId: 'screenSharingAccPack',
     name: 'guidScreensharingAccPack',
     actionInitialize: 'Init',
