@@ -390,17 +390,18 @@
 
   };
 
-  var _validateExtension = function (extensionID) {
+  var _validateExtension = function (extensionID, extensionPathFF, appendWebStoreLink) {
 
     if (OT.$.browser() === 'Chrome') {
       if (!extensionID || !extensionID.length) {
         throw new Error('Error starting the screensharing. Chrome extensionID required');
       } else {
-        $('<link/>', {
-          rel: 'chrome-webstore-item',
-          href: ['https://chrome.google.com/webstore/detail/', extensionID].join('')
-        }).appendTo('head');
-
+        if (appendWebStoreLink) {
+          $('<link/>', {
+            rel: 'chrome-webstore-item',
+            href: ['https://chrome.google.com/webstore/detail/', extensionID].join('')
+          }).appendTo('head');
+        }
         OT.registerScreenSharingExtension('chrome', extensionID, 2);
       }
     }
@@ -416,7 +417,7 @@
     _session = _.property('session')(options);
     _accPack = _.property('accPack')(options);
 
-    _validateExtension(_.property('extensionID')(options), _.property('extensionPathFF')(options));
+    _validateExtension(_.property('extensionID')(options), _.property('extensionPathFF')(options), _.property('appendWebStoreLink')(options));
   };
 
   /**
@@ -426,6 +427,7 @@
    * @param {String} options.session
    * @param {Object} [options.accPack]
    * @param {String} [options.extensionID]
+   * @param {String} [options.appendWebStoreLink]
    * @param {String} [options.extentionPathFF]
    * @param {String} [options.screensharingParent]
    * @param {String | Function} [options.screensharingContainer]
@@ -443,6 +445,7 @@
       'externalWindow',
       'extensionURL',
       'extensionID',
+      'appendWebStoreLink',
       'extensionPathFF',
       'screenSharingContainer',
       'screenSharingParent',
@@ -458,6 +461,7 @@
       screenSharingParent: '#videoContainer',
       screenSharingContainer: document.getElementById('videoHolderSharedScreen'),
       controlsContainer: '#feedControls',
+      appendWebStoreLink: true,
       appendControl: true,
     }));
 

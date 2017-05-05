@@ -52,6 +52,7 @@ Set the OpenTok session  (object).| `session` |`true`
 Set the screen container (string). | `screenSharingContainer`  |`false`
 Set the Common layer API (object). | `accPack` |`false`
 Set the ID of the Chrome extension (string). | `extensionID` |`false`
+Append a link tag for Chrome Web Store inline install (boolean) (defaults to `true`). | `appendWebStoreLink` |`false`
 Set the download path for the FireFox extension (string). | `extentionPathFF` |`false`
 Using screen sharing with the annotation accelerator pack.| `annotation` |`false`
 If using annotation, should we use an external window.| `externalWindow` |`false`
