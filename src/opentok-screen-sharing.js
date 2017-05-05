@@ -417,7 +417,9 @@
     _session = _.property('session')(options);
     _accPack = _.property('accPack')(options);
 
-    _validateExtension(_.property('extensionID')(options), _.property('extensionPathFF')(options), _.property('appendWebStoreLink')(options));
+    var appendLink = options.appendWebStoreLink === undefined ? true : options.appendWebStoreLink;
+
+    _validateExtension(_.property('extensionID')(options), _.property('extensionPathFF')(options), appendLink);
   };
 
   /**
