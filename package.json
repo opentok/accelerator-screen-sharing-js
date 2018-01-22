@@ -37,6 +37,7 @@
     "uglify-js": "^2.8.15"
   },
   "dependencies": {
+    "bowser": "^1.9.1",
     "jquery": "^3.1.0",
     "opentok-solutions-logging": "^1.0.6",
     "underscore": "^1.8.3"
