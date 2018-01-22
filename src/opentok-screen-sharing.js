@@ -5,16 +5,19 @@
   var _;
   var $;
   var OTKAnalytics;
+  var bowser;
 
   if (typeof module === 'object' && typeof module.exports === 'object') {
     /* eslint-disable import/no-unresolved */
     _ = require('underscore');
     $ = require('jquery');
+    bowser = require('bowser');
     OTKAnalytics = require('opentok-solutions-logging');
     /* eslint-enable import/no-unresolved */
   } else {
     _ = this._;
     $ = this.$;
+    bowser = this.bowser;
     OTKAnalytics = this.OTKAnalytics;
   }
 
@@ -281,9 +284,9 @@
 
     OT.checkScreenSharingCapability(function (response) {
       if (!response.supported || !response.extensionRegistered) {
-        if (OT.$.browser() === 'Firefox' && response.extensionInstalled) {
+        if (bowser.firefox && response.extensionInstalled) {
           deferred.resolve();
-        } else if (OT.$.browser() === 'Firefox' && !response.extensionInstalled) {
+        } else if (bowser.firefox && !response.extensionInstalled) {
           $('#dialog-form-ff').toggle();
           deferred.reject('screensharing extension not installed');
         } else {
@@ -392,7 +395,7 @@
 
   var _validateExtension = function (extensionID, extensionPathFF, appendWebStoreLink) {
 
-    if (OT.$.browser() === 'Chrome') {
+    if (bowser.chrome) {
       if (!extensionID || !extensionID.length) {
         throw new Error('Error starting the screensharing. Chrome extensionID required');
       } else {
