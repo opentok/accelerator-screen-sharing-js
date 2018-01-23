@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build:css": "npm-css css/screen-share.css -o dist/screen-share.css",
-    "build:js": "cp src/opentok-screen-sharing.js dist/ & uglifyjs src/opentok-screen-sharing.js -o dist/opentok-screen-sharing.min.js",
+    "build:js": "concat -o dist/opentok-screen-sharing.js src/* & uglifyjs dist/opentok-screen-sharing.js -o dist/opentok-screen-sharing.min.js",
     "build:images": "cp -r images/ dist/images/",
     "build:logversion": "replace '(js-vsol-)(x.y.z)' '$1'$npm_package_version dist/*",
     "build": "mkdir -p dist && npm run build:js & npm run build:css & npm run build:images && npm run build:logversion",
@@ -31,6 +31,7 @@
     "url": "https://github.com/opentok/accelerator-screen-sharing-js"
   },
   "devDependencies": {
+    "concat": "^1.0.3",
     "merge-stream": "^1.0.0",
     "npm-css": "^0.2.3",
     "replace": "^0.3.0",
