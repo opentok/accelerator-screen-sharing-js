@@ -281,9 +281,9 @@
 
     OT.checkScreenSharingCapability(function (response) {
       if (!response.supported || !response.extensionRegistered) {
-        if (OT.$.browser() === 'Firefox' && response.extensionInstalled) {
+        if (detectBrowser() === 'Firefox' && response.extensionInstalled) {
           deferred.resolve();
-        } else if (OT.$.browser() === 'Firefox' && !response.extensionInstalled) {
+        } else if (detectBrowser() === 'Firefox' && !response.extensionInstalled) {
           $('#dialog-form-ff').toggle();
           deferred.reject('screensharing extension not installed');
         } else {
@@ -392,7 +392,7 @@
 
   var _validateExtension = function (extensionID, extensionPathFF, appendWebStoreLink) {
 
-    if (OT.$.browser() === 'Chrome') {
+    if (detectBrowser() === 'Chrome') {
       if (!extensionID || !extensionID.length) {
         throw new Error('Error starting the screensharing. Chrome extensionID required');
       } else {
