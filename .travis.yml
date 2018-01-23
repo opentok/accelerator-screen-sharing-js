@@ -7,7 +7,7 @@ script:
 - npm run build
 - npm test
 - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then 
-    VERSION=$(jq '.version' package.json sed -e 's/^"//' -e 's/"$//');
+    VERSION=$(jq '.version' package.json | sed -e 's/^"//' -e 's/"$//');
     git commit -m "New build. Bump npm version." --allow-empty;
     git tag v$VERSION;
     git push --quiet https://$GITHUBKEY@github.com/opentok/accelerator-screen-sharing-js v$VERSION;
@@ -15,8 +15,7 @@ script:
 deploy:
   provider: npm
   email: vsolutions@tokbox.com
-  api_key:
-    secure: Nsn9Kug0LEhtVx7IrF0PrEXdUgQjCvwSCTM9jsxLo9QhBjSGKl3nq0o2Oj8XGI9SU+Z5IxgJge+/c3RN0NGxPqgeJmWpXWQTqIffE9IvwquEFbZWq6tidZKMVd0reQvtjgWS5r9gX4ngQE4VYlQQWhyDeEq0ddAeLR/GsqzqtXqhNANJSBNd4pkLdNootzzeR659ggLi7GN4flSkEzuAfseIXfbDqwcgfKtzEuBY2tuziqcKL2NtzjStpeAU0o9cjMrkucfWJtS5dPn8zCIkv2iNc+9/3H08K9ausGvPHz+rpAfOgVfVeYbpy7wDVX0YOmurMojvPjds1Xzd/N74kmNBWS+d+Rk7iKh7hLeOyoDYh4Y/0fvergAMmjIOnm5Bh4EWKbfO4zvAy3qiwG7zhqzFuqC7eyd/Vp5t0TowWz54AzXl0JN+0jLx+d6iyRSZOlEmRY3gZSrpIaducDKyoCxNX68OpEmjvmOFzKeOuiWPG+soNDGbWIewIGPQSt8iFLbBp6K7Klks84t11zLNQq3YcD2drskBlBgNauTI+MzbKyXxDNIykUSDULy+bD2lq1OjBeGGxxjbG+Cd0gP3WX6/pSlsEIOs/0uzgcmmdnznwRa0vHXplgfyey7z3B+jqKimWoTWVrol+p3WHSF58dy7UjaAnyDOVzenTX3sD2w=
+  api_key: $NPM_TOKEN
   on:
     branch: master
   skip_cleanup: true
