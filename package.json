@@ -1,6 +1,6 @@
 {
   "name": "opentok-screen-sharing",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "OpenTok screen sharing accelerator pack",
   "main": "dist/opentok-screen-sharing.js",
   "directories": {
@@ -31,8 +31,21 @@
     "url": "https://github.com/opentok/accelerator-screen-sharing-js"
   },
   "devDependencies": {
+    "babel-plugin-espower": "^2.4.0",
+    "chai": "^4.1.2",
     "concat": "^1.0.3",
+    "karma": "^2.0.0",
+    "karma-browserify": "^5.1.3",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-sauce-launcher": "^1.2.0",
     "merge-stream": "^1.0.0",
+    "mocha": "^5.0.0",
     "npm-css": "^0.2.3",
     "replace": "^0.3.0",
     "uglify-js": "^2.8.15"

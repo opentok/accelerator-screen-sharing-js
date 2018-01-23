@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 --------------------------------------
+#### [1.0.28]
+
+[UPDATED] Compatibility with OpenTok.js 2.13.
 
 #### [1.0.25]
 

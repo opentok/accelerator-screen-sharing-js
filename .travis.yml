@@ -3,12 +3,23 @@ node_js:
 - '4.4'
 env:
 - SAUCE_USERNAME=verticalsol
-before_install:
-before_script:
-- npm run build
-- npm install --save-dev chai karma karma-chai karma-chrome-launcher karma-coverage karma-firefox-launcher karma-html2js-preprocessor mocha karma-mocha karma-phantomjs-launcher karma-browserify babel-plugin-espower karma-sauce-launcher
 script:
+- npm run build
 - npm test
+- if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then 
+    VERSION=$(jq '.version' package.json sed -e 's/^"//' -e 's/"$//');
+    git commit -m "New build. Bump npm version." --allow-empty;
+    git tag v$VERSION;
+    git push --quiet https://$GITHUBKEY@github.com/opentok/accelerator-screen-sharing-js v$VERSION;
+  fi
+deploy:
+  provider: npm
+  email: vsolutions@tokbox.com
+  api_key:
+    secure: Nsn9Kug0LEhtVx7IrF0PrEXdUgQjCvwSCTM9jsxLo9QhBjSGKl3nq0o2Oj8XGI9SU+Z5IxgJge+/c3RN0NGxPqgeJmWpXWQTqIffE9IvwquEFbZWq6tidZKMVd0reQvtjgWS5r9gX4ngQE4VYlQQWhyDeEq0ddAeLR/GsqzqtXqhNANJSBNd4pkLdNootzzeR659ggLi7GN4flSkEzuAfseIXfbDqwcgfKtzEuBY2tuziqcKL2NtzjStpeAU0o9cjMrkucfWJtS5dPn8zCIkv2iNc+9/3H08K9ausGvPHz+rpAfOgVfVeYbpy7wDVX0YOmurMojvPjds1Xzd/N74kmNBWS+d+Rk7iKh7hLeOyoDYh4Y/0fvergAMmjIOnm5Bh4EWKbfO4zvAy3qiwG7zhqzFuqC7eyd/Vp5t0TowWz54AzXl0JN+0jLx+d6iyRSZOlEmRY3gZSrpIaducDKyoCxNX68OpEmjvmOFzKeOuiWPG+soNDGbWIewIGPQSt8iFLbBp6K7Klks84t11zLNQq3YcD2drskBlBgNauTI+MzbKyXxDNIykUSDULy+bD2lq1OjBeGGxxjbG+Cd0gP3WX6/pSlsEIOs/0uzgcmmdnznwRa0vHXplgfyey7z3B+jqKimWoTWVrol+p3WHSF58dy7UjaAnyDOVzenTX3sD2w=
+  on:
+    branch: master
+  skip_cleanup: true
 notifications:
   slack:
     secure: uyXK9zqfENTTYdP5ghoi3mRVv5aWxp6yj80MRP0qMTubtnOSvye0kCyY7Y/u8Ww+wE+9Xw2ZD6qLt0JEbO6HUAOOaXd6JsduxTwS4m1L/4qzPvBQztDAJRNvQx3nbh38uP0fuzZc1GRfTPNmDYUvczPRcWTduPZO82Kgzb4vafkss4thfKbnZqwLud/pghaJuN/LeESO2vmf0HxUlxTpnw4BYBUAnPo/9YUao7bvg2/3kxIpxApKZyxnoHeBcoNOOzzCmVBQnkfc4LMbXXg7ixwe0789gzOmr7ifeSBN6FVwNrw0rUNGQHA5tKnOclsfvHwdGHPoOLadZqbMi1QYXT+t89WpveBsbhBu3xqzZzHr7+LoBaP5Heg+FIeCyNqk7H1z24/7HtEDwc1dwIuGkphWYdHazSCNcjet1mVsVouM7Yg5SuUNN+pnAo74A5b2iR/PS7RoU09xAclAThwVV/txkz42nOvXka8DHKXEn8Kie8xplWt2T8aDq2jfHpI9I27/mxZl8GxqjPCbMCl9I1BE8FnnQP6FoFhj7EQ8+CYbxCA45XOYV0guv8D34/lTXmh2QozAxD3R/BOqaOn6V2aIb2szDb4KeM5t60qCGS6tuW7/hTt4xTcrrnfrfNDntXO2RkHnxONpuEGk0O1dLzL0Hdf8irq3vqUwE+Sk7GE=
