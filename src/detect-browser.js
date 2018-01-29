@@ -42,5 +42,5 @@ function detectBrowser() {
 function firefoxExtensionRequired() {
   var match = navigator.userAgent.match(/(?:firefox|iceweasel|fxios)[ \/](\d+(\.\d+)?)/i);
   var version = (match && match.length > 1 && match[1]) || '';
-  return version < "52.0";
+  return version < '52.0';
 };
