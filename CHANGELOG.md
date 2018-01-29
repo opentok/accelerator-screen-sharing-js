@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 --------------------------------------
+#### [1.0.29]
+
+[UPDATED] Remove screen sharing extension requirement for FireFox 52 and above.
+
 #### [1.0.28]
 
 [UPDATED] Compatibility with OpenTok.js 2.13.
