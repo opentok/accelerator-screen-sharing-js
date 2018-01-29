@@ -281,7 +281,7 @@
 
     OT.checkScreenSharingCapability(function (response) {
       if (!response.supported || !response.extensionRegistered) {
-        if (detectBrowser() === 'Firefox' && response.extensionInstalled) {
+        if (detectBrowser() === 'Firefox' && (response.extensionInstalled || !firefoxExtensionRequired())) {
           deferred.resolve();
         } else if (detectBrowser() === 'Firefox' && !response.extensionInstalled) {
           $('#dialog-form-ff').toggle();

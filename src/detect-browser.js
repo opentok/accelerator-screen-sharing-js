@@ -37,4 +37,10 @@ function detectBrowser() {
   }
   // Default fallthrough: not supported.
   return 'unsupported browser';
-}
+};
+
+function firefoxExtensionRequired() {
+  var match = navigator.userAgent.match(/(?:firefox|iceweasel|fxios)[ \/](\d+(\.\d+)?)/i);
+  var version = (match && match.length > 1 && match[1]) || '';
+  return version < "52.0";
+};
