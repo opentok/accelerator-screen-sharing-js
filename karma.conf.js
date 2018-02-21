@@ -4,7 +4,7 @@ module.exports = function(config) {
       base: 'SauceLabs',
       browserName: 'chrome',
       platform: 'OS X 10.11',
-      version: '56'
+      version: '64'
     }
   };
 
