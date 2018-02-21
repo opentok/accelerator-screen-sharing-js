@@ -185,6 +185,9 @@
             message: 'Error starting the screen sharing',
           }));
         } else {
+          _this.publisher.on('mediaStopped', function () {
+            end();
+          });
           innerDeferred.resolve();
         }
       });
