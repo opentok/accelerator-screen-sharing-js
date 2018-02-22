@@ -2,7 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 --------------------------------------
-#### [1.0.30]
+
+#### [1.0.31]
 
 [UPDATED] End screen sharing when the media has stopped.
 
