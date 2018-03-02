@@ -1,6 +1,6 @@
 {
   "name": "opentok-screen-sharing",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "OpenTok screen sharing accelerator pack",
   "main": "dist/opentok-screen-sharing.js",
   "directories": {
