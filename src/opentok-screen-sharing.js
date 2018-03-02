@@ -135,7 +135,7 @@
   };
 
   var _setupUI = function (parent) {
-    $('body').append(_screenDialogsExtensions);
+    $('body').append(_this.screenDialogsExtensions);
     _this.appendControl && $(_this.controlsContainer).append(_screenSharingControl);
     $(parent).append(_screenSharingView);
   };
@@ -435,6 +435,7 @@
    * @param {String} [options.appendWebStoreLink]
    * @param {String} [options.extentionPathFF]
    * @param {String} [options.screensharingParent]
+   * @param {String} [options.screenDialogsExtensions]
    * @param {String | Function} [options.screensharingContainer]
    */
   var ScreenSharingAccPack = function (options) {
@@ -459,6 +460,7 @@
       'localScreenProperties',
       'appendControl',
       'dev',
+      'screenDialogsExtensions',
     ];
 
 
@@ -468,6 +470,7 @@
       controlsContainer: '#feedControls',
       appendWebStoreLink: true,
       appendControl: true,
+      screenDialogsExtensions: _screenDialogsExtensions,
     }));
 
 
