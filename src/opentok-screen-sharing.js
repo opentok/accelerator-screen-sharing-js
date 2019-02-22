@@ -283,19 +283,21 @@
     }
 
     OT.checkScreenSharingCapability(function (response) {
-      if (!response.supported || !response.extensionRegistered) {
-        if (detectBrowser() === 'Firefox' && (response.extensionInstalled || !firefoxExtensionRequired())) {
-          deferred.resolve();
-        } else if (detectBrowser() === 'Firefox' && !response.extensionInstalled) {
-          $('#dialog-form-ff').toggle();
-          deferred.reject('screensharing extension not installed');
+      if (!response.supported || response.extensionRegistered === false) {
+        alert('This browser does not support screen sharing! Please use Chrome, Firefox or IE!');
+        deferred.reject('browser support not available');
+      } else if (response.extensionInstalled === false) {
+        if (detectBrowser() === 'Firefox') {
+          if (!firefoxExtensionRequired()) {
+            deferred.resolve();
+          } else {
+            $('#dialog-form-ff').toggle();
+            deferred.reject('screensharing extension not installed');
+          }
         } else {
-          alert('This browser does not support screen sharing! Please use Chrome, Firefox or IE!');
-          deferred.reject('browser support not available');
+          $('#dialog-form-chrome').toggle();
+          deferred.reject('screensharing extension not installed');
         }
-      } else if (!response.extensionInstalled) {
-        $('#dialog-form-chrome').toggle();
-        deferred.reject('screensharing extension not installed');
       } else {
         deferred.resolve();
       }
@@ -348,13 +350,7 @@
 
     /** Handlers for screensharing extension modal */
     $('#btn-install-plugin-chrome').on('click', function () {
-      chrome.webstore.install(['https://chrome.google.com/webstore/detail/', _this.extensionID].join(''),
-        function (success) {
-          console.log('success', success);
-        },
-        function (error) {
-          console.log('error', error);
-        });
+      window.open(['https://chrome.google.com/webstore/detail/', _this.extensionID].join(''), '_blank');
       $('#dialog-form-chrome').toggle();
     });
 
