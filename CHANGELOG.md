@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 --------------------------------------
 
+#### [1.0.33]
+
+[FIXED] Fix OT.checkScreenSharingCapability
+
 #### [1.0.32]
 
 [UPDATED] screenDialogsExtensions option
