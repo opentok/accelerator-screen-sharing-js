@@ -30,7 +30,7 @@ module.exports = function (config) {
       'test/*.html': ['html2js'],
       'src/*.js': ['coverage']
     },
-    reporters: ['progress', 'coverage', 'dots', 'saucelabs'],
+    reporters: ['progress', 'coverage', 'dots'],
     port: 9877,
     colors: true,
     autoWatch: true,
