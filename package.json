@@ -7,11 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "build:css": "npm-css css/screen-share.css -o dist/screen-share.css",
-    "build:js": "concat -o dist/opentok-screen-sharing.js src/* & uglifyjs dist/opentok-screen-sharing.js -o dist/opentok-screen-sharing.min.js",
-    "build:images": "cp -r images/ dist/images/",
-    "build:logversion": "replace '(js-vsol-)(x.y.z)' '$1'$npm_package_version dist/*",
-    "build": "mkdir -p dist && npm run build:js & npm run build:css & npm run build:images && npm run build:logversion",
+    "build:css": "copyfiles css/*.css dist/",
+    "build:js": "concat -o dist/opentok-screen-sharing.js  src/detect-browser.js src/opentok-screen-sharing.js & uglifyjs dist/opentok-screen-sharing.js -o dist/opentok-screen-sharing.min.js",
+    "build:images": "copyfiles images/**/* dist/",
+    "build:logversion": "replace '(js-vsol-)(x.y.z)' '$1'$npm_package_version ./dist",
+    "build": "mkdir dist && npm run build:js & npm run build:css & npm run build:images && npm run build:logversion",
     "test": "karma start"
   },
   "babel": {
@@ -31,28 +31,29 @@
     "url": "https://github.com/opentok/accelerator-screen-sharing-js"
   },
   "devDependencies": {
-    "babel-plugin-espower": "^2.4.0",
-    "chai": "^4.1.2",
+    "babel-plugin-espower": "^3.0.1",
+    "chai": "^4.2.0",
     "concat": "^1.0.3",
-    "karma": "^2.0.0",
-    "karma-browserify": "^5.1.3",
+    "copyfiles": "^2.3.0",
+    "coverage": "^0.4.1",
+    "html2js": "^0.2.0",
+    "karma": "^5.1.1",
     "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.1.1",
-    "karma-firefox-launcher": "^1.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.3",
     "karma-html2js-preprocessor": "^1.1.0",
-    "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-sauce-launcher": "^1.2.0",
-    "merge-stream": "^1.0.0",
-    "mocha": "^5.0.0",
+    "karma-mocha": "^2.0.1",
+    "karma-requirejs": "^1.1.0",
+    "karma-sinon": "^1.0.5",
+    "merge-stream": "^2.0.0",
+    "mocha": "^8.1.3",
     "npm-css": "^0.2.3",
-    "replace": "^0.3.0",
-    "uglify-js": "^2.8.15"
+    "uglify-js": "^3.10.2"
   },
   "dependencies": {
-    "jquery": "^3.1.0",
-    "opentok-solutions-logging": "^1.0.6",
-    "underscore": "^1.8.3"
+    "jquery": "^3.5.1",
+    "opentok-solutions-logging": "^1.1.0",
+    "replace": "^0.3.0",
+    "underscore": "^1.11.0"
   }
 }

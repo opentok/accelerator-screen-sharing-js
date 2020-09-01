@@ -1,6 +1,6 @@
 function detectBrowser() {
 
-  const navigator = window && window.navigator;
+  var navigator = window && window.navigator;
 
   // Fail early if it's not a browser
   if (typeof window === 'undefined' || !window.navigator) {

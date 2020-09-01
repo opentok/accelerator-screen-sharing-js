@@ -1,8 +1,13 @@
 language: node_js
 node_js:
-- '4.4'
-env:
-- SAUCE_USERNAME=verticalsol
+- '10.16'
+services:
+- xvfb
+branches:
+  only: 
+    - master
+before_script:
+  - npm install
 script:
 - npm run build
 - npm test
