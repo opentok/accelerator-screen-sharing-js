@@ -157,7 +157,7 @@
    * element so that we can pass it to the initPublisher function.
    * @returns {promise} < Resolve: [Object] Container element for annotation in external window >
    */
-  var _initPublisher = function () {
+  var _initPublisher = function (props) {
 
     var createPublisher = function (publisherDiv) {
 
@@ -175,9 +175,11 @@
       var container = getContainer();
       var properties =
         _this.localScreenProperties ||
-        _this.localScreenProperties ||
         _defaultScreenProperties;
 
+      if (props) {
+        Object.assign(properties, props);
+      }
       _this.publisher = OT.initPublisher(container, properties, function (error) {
         if (error) {
           _triggerEvent('screenSharingError', error);
@@ -307,10 +309,10 @@
 
   };
 
-  var start = function () {
+  var start = function (props) {
     _log(_logEventData.actionStart, _logEventData.variationAttempt);
     extensionAvailable(_this.extensionID, _this.extensionPathFF)
-      .then(_initPublisher)
+      .then(_initPublisher(props))
       .then(_publish)
       .fail(function (error) {
         console.log('Error starting screensharing: ', error);
