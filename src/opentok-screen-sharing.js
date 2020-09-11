@@ -173,15 +173,9 @@
       }
 
       var container = getContainer();
-      var properties =
-        _this.localScreenProperties ||
-        _defaultScreenProperties;
+      
+      var properties = Object.assign({}, _this.localScreenProperties || _defaultScreenProperties, publisherOptions);
 
-      if (publisherOptions) {
-       var properties = Object.assign(
-         {}, _this.localScreenProperties || _defaultScreenProperties, publisherOptions
-       );
-      }
       _this.publisher = OT.initPublisher(container, properties, function (error) {
         if (error) {
           _triggerEvent('screenSharingError', error);
@@ -311,9 +305,7 @@
 
   };
   /**
-   * Accepts custom properties as a parameters
-   * @param {Object} publisherOptions
-   * @param null
+   * @param {Object} [publisherOptions]  - Properties for the screen sharing publisher.
    */
   var start = function (publisherOptions) {
     _log(_logEventData.actionStart, _logEventData.variationAttempt);
