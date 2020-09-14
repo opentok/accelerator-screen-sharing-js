@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 --------------------------------------
 
+#### [1.0.34]
+
+[ADDED] Optional publisherOptions to start function
+
 #### [1.0.33]
 
 [FIXED] Fix OT.checkScreenSharingCapability
