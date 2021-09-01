@@ -5,14 +5,15 @@ services:
 - xvfb
 branches:
   only: 
-    - master
+    - main
 before_script:
   - npm install
 script:
 - npm run build
 - npm test
-- if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then 
-    VERSION=$(jq '.version' package.json | sed -e 's/^"//' -e 's/"$//');
+- VER_DEPL=$(npm show opentok-screen-sharing version);
+- VERSION=$(jq '.version' package.json | sed -e 's/^"//' -e 's/"$//');
+- if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_BRANCH" == "main" && "$VER_DEPL" != "$VERSION" ]]; then 
     git commit -m "New build. Bump npm version." --allow-empty;
     git tag v$VERSION;
     git push --quiet https://$GITHUBKEY@github.com/opentok/accelerator-screen-sharing-js v$VERSION;
@@ -23,6 +24,7 @@ deploy:
   api_key: $NPM_TOKEN
   on:
     branch: main
+    condition: $VERSION != $VER_DEPL
   skip_cleanup: true
 notifications:
   slack:
