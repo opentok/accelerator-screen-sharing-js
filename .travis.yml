@@ -22,7 +22,7 @@ deploy:
   email: vsolutions@tokbox.com
   api_key: $NPM_TOKEN
   on:
-    branch: master
+    branch: main
   skip_cleanup: true
 notifications:
   slack:
