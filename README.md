@@ -1,6 +1,6 @@
 # Accelerator Screensharing for Javascript
 
-[![Build Status](https://travis-ci.org/opentok/accelerator-screen-sharing-js.svg?branch=main)](https://travis-ci.org/opentok/accelerator-screen-sharing-js)
+[![Build Status](https://app.travis-ci.com/opentok/accelerator-screen-sharing-js.svg?branch=main)](https://app.travis-ci.com/github/opentok/accelerator-screen-sharing-js)
 [![GitHub release](https://img.shields.io/github/release/opentok/accelerator-screen-sharing-js.svg)](./README.md)
 [![license MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](./.github/LICENSE)
 [![npm](https://img.shields.io/npm/v/opentok-screen-sharing.svg)](https://www.npmjs.com/package/opentok-screen-sharing)
